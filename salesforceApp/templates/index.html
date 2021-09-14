@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="container">
+    {% if user.is_authenticated %}
+    <p>You're now signed in using your Salesforce credentials</p>
+    <a href="{% url 'logout' %}" class="btn">Logout</a>
+    <a href="{% url 'view-data' %}" class="btn">View data</a>
+    {% else %}
+    <p>Login using Salesforce</p>
+    <a href="{% url 'oauth2' %}" class="btn">Login</a>
+    {% endif %}
+  </div>
+{% endblock %}

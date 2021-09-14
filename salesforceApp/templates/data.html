@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<a href="/" class="btn">Home</a>
+
+<table>
+  <caption><b>Users data</b></caption>
+  <thead>
+    <tr>
+      {% for item_ in users_data.1 %}
+      <th>{{item_.name}}</th>
+      {% endfor %}
+    </tr>
+
+  </thead>
+  <tbody>
+    {% for item in users_data.0 %}
+    <tr>
+      <td>{{item.user_id}}</td>
+      <td>{{item.username}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.company_name}}</td>
+      <td>{{item.city}}</td>
+      <td>{{item.phone_no}}</td>
+      <td>{{item.email}}</td>
+      <td>{{item.isactive}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<table>
+  <caption><b>Accounts Data</b></caption>
+  <thead>
+    <tr>
+      {% for item in accounts_data.1 %}
+      <th>{{item.name}}</th>
+      {% endfor %}
+    </tr>
+  </thead>
+  <tbody>
+    {% for item in accounts_data.0 %}
+    <tr>
+      <td>{{item.account_id}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.photourl}}</td>
+      <td>{{item.billingaddress}}</td>
+      <td>{{item.account_number}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<table class="table table-light">
+  <caption><b>Contact data</b></caption>
+  <thead>
+    <tr>
+      {% for item in contact_data.1 %}
+      <th>{{item.name}}</th>
+      {% endfor %}
+    </tr>
+  </thead>
+  <tbody>
+    {% for item in contact_data.0 %}
+    <tr>
+      <td>{{item.contact_id}}</td>
+      <td>{{item.accountid}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.mailingstreet}}</td>
+      <td>{{item.phone_no}}</td>
+      <td>{{item.birth_day}}</td>
+      <td>{{item.lead_source}}</td>
+      <td>{{item.email}}</td>
+      <td>{{item.department}}</td>
+      <td>{{item.photourl}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}
